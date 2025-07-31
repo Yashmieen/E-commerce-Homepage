@@ -7,23 +7,28 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #f9f9f9;
+  background: #f4f4f4;
   color: #333;
   line-height: 1.6;
 }
 
 /* Header */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #222;
   color: #fff;
   padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 header h1 {
-  font-size: 24px;
+  font-size: 26px;
+  font-weight: 700;
 }
 
 nav a {
@@ -31,11 +36,11 @@ nav a {
   text-decoration: none;
   margin-left: 20px;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #ff9800;
-  transition: 0.3s;
 }
 
 /* Hero section */
@@ -45,15 +50,17 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #ff9800, #ff5722);
+  background: linear-gradient(120deg, #ff9800, #ff5722);
   color: white;
   text-align: center;
   padding: 20px;
+  animation: fadeIn 1s ease-in;
 }
 
 .hero h2 {
   font-size: 48px;
   margin-bottom: 15px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
 }
 
 .hero p {
@@ -65,39 +72,40 @@ nav a:hover {
   background: #fff;
   color: #ff5722;
   border: none;
-  padding: 12px 25px;
+  padding: 14px 28px;
   font-size: 16px;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .hero button:hover {
   background: #ffebee;
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* Products section */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 40px;
+  gap: 25px;
+  padding: 50px;
 }
 
 .product-card {
   background: #fff;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 25px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 .product-card img {
@@ -107,31 +115,32 @@ nav a:hover {
 }
 
 .product-card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 8px;
 }
 
 .product-card p {
   font-size: 18px;
   font-weight: bold;
   color: #ff5722;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .product-card button {
   background: #ff5722;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 12px 22px;
+  border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .product-card button:hover {
   background: #e64a19;
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* Footer */
@@ -139,16 +148,36 @@ footer {
   background: #222;
   color: #fff;
   text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
+  padding: 20px 0;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+footer p {
+  margin-bottom: 0;
+  transition: color 0.3s ease;
+}
+
+footer p:hover {
+  color: #ff9800;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .hero h2 {
-    font-size: 32px;
+    font-size: 34px;
   }
   .hero p {
     font-size: 18px;
+  }
+  nav a {
+    margin-left: 10px;
+    font-size: 14px;
   }
 }
